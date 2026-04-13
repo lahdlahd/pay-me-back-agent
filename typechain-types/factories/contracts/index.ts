@@ -2,4 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as loanManagerSol from "./LoanManager.sol";
+export * as simpleV2RouterSol from "./SimpleV2Router.sol";
 export { MockToken__factory } from "./MockToken__factory";
+export { UniswapV2FactoryDeployer__factory } from "./UniswapV2FactoryDeployer__factory";
+export { UniswapV2Router02Deployer__factory } from "./UniswapV2Router02Deployer__factory";
+export { WrappedOKB__factory } from "./WrappedOKB__factory";

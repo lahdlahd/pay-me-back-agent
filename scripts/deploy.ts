@@ -14,7 +14,14 @@ async function main() {
     throw new Error("COLLATERAL_TOKEN_ADDRESS is required in .env");
   }
 
-  const [deployer] = await ethers.getSigners();
+  const signers = await ethers.getSigners();
+  if (signers.length === 0) {
+    throw new Error(
+      "No deployer signer found. Set PRIVATE_KEY in the root .env file before running deploy:xlayer."
+    );
+  }
+
+  const [deployer] = signers;
   console.log(`Deployer: ${deployer.address}`);
 
   const factory = await ethers.getContractFactory("LoanManager");

@@ -7,10 +7,16 @@
     "compile": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat compile",
     "deploy:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/deploy.ts --network xlayer",
     "deploy:mock:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/deployMockToken.ts --network xlayer",
+    "deploy:amm:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/deployUniswapV2.ts --network xlayer",
+    "deploy:router:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/deploySimpleRouter.ts --network xlayer",
+    "seed:liquidity:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/seedLiquidity.ts --network xlayer",
+    "check:route:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/checkRoute.ts --network xlayer",
     "agent:start": "ts-node agent/index.ts"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.1.0",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.5"
   },

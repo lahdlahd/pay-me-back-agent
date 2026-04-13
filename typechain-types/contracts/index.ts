@@ -3,4 +3,9 @@
 /* eslint-disable */
 import type * as loanManagerSol from "./LoanManager.sol";
 export type { loanManagerSol };
+import type * as simpleV2RouterSol from "./SimpleV2Router.sol";
+export type { simpleV2RouterSol };
 export type { MockToken } from "./MockToken";
+export type { UniswapV2FactoryDeployer } from "./UniswapV2FactoryDeployer";
+export type { UniswapV2Router02Deployer } from "./UniswapV2Router02Deployer";
+export type { WrappedOKB } from "./WrappedOKB";
