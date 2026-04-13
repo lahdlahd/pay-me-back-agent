@@ -1,0 +1,148 @@
+:root {
+  --bg-0: #f7f1e4;
+  --bg-1: #e9dcc5;
+  --ink: #10213d;
+  --accent: #db5e38;
+  --accent-2: #1f7a6f;
+  --card: rgba(255, 255, 255, 0.75);
+  --line: rgba(16, 33, 61, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  color: var(--ink);
+  background:
+    radial-gradient(90rem 40rem at -10% -15%, rgba(31, 122, 111, 0.23), transparent),
+    radial-gradient(70rem 30rem at 110% 0%, rgba(219, 94, 56, 0.24), transparent),
+    linear-gradient(140deg, var(--bg-0), var(--bg-1));
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.2rem 1rem 4rem;
+}
+
+.hero {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.8vw, 3rem);
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 64ch;
+  opacity: 0.85;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  animation: enter 420ms ease-out both;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+label {
+  display: block;
+  font-size: 0.92rem;
+  margin: 0.55rem 0 0.22rem;
+}
+
+input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 0.62rem 0.75rem;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.72rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent), #c44724);
+}
+
+button.secondary {
+  background: linear-gradient(120deg, var(--accent-2), #116257);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  padding: 0.2rem 0.65rem;
+  font-size: 0.86rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.loan-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.75rem;
+}
+
+.loan-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.72rem;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+code {
+  font-size: 0.82rem;
+  word-break: break-all;
+}

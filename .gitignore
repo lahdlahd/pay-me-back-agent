@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+artifacts/
+cache/
+dist/
+frontend/.next/
+frontend/node_modules/
+*.log
