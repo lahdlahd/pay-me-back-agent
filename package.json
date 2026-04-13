@@ -6,6 +6,7 @@
     "build": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat compile",
     "compile": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat compile",
     "deploy:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/deploy.ts --network xlayer",
+    "deploy:mock:xlayer": "set HARDHAT_DISABLE_TELEMETRY_PROMPT=true&& hardhat run scripts/deployMockToken.ts --network xlayer",
     "agent:start": "ts-node agent/index.ts"
   },
   "dependencies": {

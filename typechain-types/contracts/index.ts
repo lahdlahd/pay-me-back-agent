@@ -3,3 +3,4 @@
 /* eslint-disable */
 import type * as loanManagerSol from "./LoanManager.sol";
 export type { loanManagerSol };
+export type { MockToken } from "./MockToken";

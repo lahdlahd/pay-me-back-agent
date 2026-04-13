@@ -2,3 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as loanManagerSol from "./LoanManager.sol";
+export { MockToken__factory } from "./MockToken__factory";

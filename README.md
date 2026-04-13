@@ -105,6 +105,21 @@ For deployment on Vercel, set the same key as an environment variable in Vercel 
 
 - `NEXT_PUBLIC_LOAN_MANAGER_ADDRESS`
 
+Agent host environment variables:
+
+```env
+PRIVATE_KEY=0x...
+LOAN_MANAGER_ADDRESS=0x...
+UNISWAP_ROUTER_ADDRESS=0x...
+COLLATERAL_TOKEN_ADDRESS=0x...
+AGENT_POLL_INTERVAL_MS=10000
+```
+
+Yes, you still need the deployed LoanManager contract address. Set it in both places:
+
+- Vercel frontend: `NEXT_PUBLIC_LOAN_MANAGER_ADDRESS`
+- Agent host: `LOAN_MANAGER_ADDRESS`
+
 ## 6) Compile and Deploy to X Layer
 
 ```bash
@@ -138,6 +153,26 @@ Behavior:
   - `markDefault(loanId)`
   - `liquidate(loanId)`
 - Logs reason and tx hashes.
+
+## 8.1) Deploy Agent to Render
+
+This repository includes a Render worker config:
+
+- `render.yaml`
+
+Steps:
+
+1. Push the repo to GitHub.
+2. In Render, create a new Blueprint from the repo.
+3. Set these environment variables in Render:
+   - `PRIVATE_KEY`
+   - `LOAN_MANAGER_ADDRESS`
+   - `UNISWAP_ROUTER_ADDRESS`
+   - `COLLATERAL_TOKEN_ADDRESS`
+   - `AGENT_POLL_INTERVAL_MS`
+4. Deploy the worker.
+
+Render will run `npm run agent:start` continuously.
 
 ## 9) Run Frontend
 
